@@ -1,8 +1,10 @@
 import {useState,useEffect} from 'react'
 import {assets} from '../../assets/assets'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 import './Add.css'
 
-const Add = () => {
+const Add = ({url}) => {
 
     const [image,setImage] = useState(false)
 
@@ -18,7 +20,7 @@ const Add = () => {
       setData(data=>({...data,[name]:value}))
     }
 
-    const onSubmitHandler=(e)=>{
+    const onSubmitHandler=async(e)=>{
       e.preventDefault();
       const formData = new FormData();
       formData.append('name',data.name)
@@ -26,7 +28,21 @@ const Add = () => {
       formData.append('price',Number(data.price))
       formData.append('category',data.category)
       formData.append('image',image)
-    }
+
+      try {
+      const response = await axios.post(`${url}/api/food/add`,formData); 
+      toast(response.data.message) 
+      setData({
+      name:"",
+      description:"",
+      price:"",
+      category:"Salad"
+      });
+      setImage(false)
+      } catch (error) {
+        toast.error(error.message)
+      }
+    };
     
   return (
     <div className='screen'>
@@ -41,7 +57,7 @@ const Add = () => {
           </div>
           <div className="add-product-name flex-col">
                 <p>Product name</p>
-                <input value={data.name} onChange={onChangeHandler} type="text" name='place' placeholder='Type here' />
+                <input value={data.name} onChange={onChangeHandler} type="text" name='name' placeholder='Type here' />
           </div>
           <div className="add-product-description" flex-col>
             <p>Product Description</p>
