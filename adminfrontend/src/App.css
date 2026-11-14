@@ -1,3 +1,17 @@
-.app-content{
+.admin-app-root {
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    background-color: #f8fafc;
+}
+
+.admin-layout-content {
+    display: flex;
+    flex: 1;
+}
+
+.admin-main-viewport {
+    flex: 1;
+    overflow-y: auto;
+    background: #f8fafc;
 }

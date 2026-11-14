@@ -1,26 +1,52 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom'
-import {assets} from '../../assets/assets'
-import './Sidebar.css'
-const Sidebar = () => {
-  return (
-    <div className='sidebar'>
-        <div className="sidebar-options">
-          <NavLink to='/add' className="sidebar-option">
-            <img src={assets.add_icon} alt="" />
-            <p>Add Items</p>
-          </NavLink>
-          <NavLink to='/list' className="sidebar-option">
-            <img src={assets.list_icon} width="27px" alt="" />
-            <p>List Items</p>
-          </NavLink>
-          <NavLink to='/orders' className="sidebar-option">
-            <img src={assets.order_icon} alt="" />
-            <p>Orders</p>
-          </NavLink>
-        </div>
-    </div>
-  )
-}
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { assets } from '../../assets/assets';
+import './Sidebar.css';
 
-export default Sidebar
+const Sidebar = () => {
+    return (
+        <aside className="admin-sidebar">
+            <div className="sidebar-group-title">Menu Management</div>
+
+            <div className="sidebar-menu-items">
+                <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                >
+                    <span className="sidebar-icon">📊</span>
+                    <p className="sidebar-label">Dashboard</p>
+                </NavLink>
+
+                <NavLink
+                    to="/list"
+                    className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                >
+                    <img src={assets.list_icon} alt="" className="sidebar-icon-img" />
+                    <p className="sidebar-label">Food Catalog</p>
+                </NavLink>
+
+                <NavLink
+                    to="/add"
+                    className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                >
+                    <img src={assets.add_icon} alt="" className="sidebar-icon-img" />
+                    <p className="sidebar-label">Add New Dish</p>
+                </NavLink>
+
+                <div className="sidebar-group-title" style={{ marginTop: '20px' }}>
+                    Sales & Dispatch
+                </div>
+
+                <NavLink
+                    to="/orders"
+                    className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                >
+                    <img src={assets.order_icon} alt="" className="sidebar-icon-img" />
+                    <p className="sidebar-label">Live Orders</p>
+                </NavLink>
+            </div>
+        </aside>
+    );
+};
+
+export default Sidebar;

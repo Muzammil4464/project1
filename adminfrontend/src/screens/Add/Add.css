@@ -1,62 +1,188 @@
-.screen{
-    width: 70%;
-    margin-left: max(5vw,25px);
-    margin-block: 50px;
-    color: #6d6d6d;
-    font-size: 1.6rem;
+.admin-add-screen {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 800px;
 }
 
-.container{
-    place-self: center;
-    width: max(40%,300px);
-    border: 1px solid var(--theme-color);
-    border-radius: 2%;
-    padding: 5%;
+.add-screen-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
 }
 
-.screen form{
+.add-screen-header p {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.add-form-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.add-dish-form {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-.add-img-upload img{
-    width: 120px;
-    cursor: pointer;
-}
-
-.add-category{
-    min-width: 125px;
-}
-
-.add-product-name input,
-.add-product-description textarea,
-.add-price input,
-.add-category select{
-    padding: 10px;
-    border: 1px solid var(--theme-color);
-    border-radius: 5px;
-    font-size: 1.4rem;
-    color: #333;
-}
-
-.add-product-description textarea{
-    resize: none;
-}
-
-.add-btn{
-    max-width: 120px;
-    padding: 10px;
-    border: none;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.add-category-price{
+.add-img-upload-box {
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.add-price input{
-    width: 100%;
+.upload-label-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.image-drop-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 20px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 14px;
+    cursor: pointer;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+.image-drop-area:hover {
+    border-color: #ff5200;
+    background: #fff4ec;
+}
+
+.preview-uploaded {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.preview-placeholder {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    opacity: 0.7;
+}
+
+.image-drop-prompt {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.image-drop-prompt strong {
+    font-size: 14px;
+    color: #0f172a;
+}
+
+.image-drop-prompt span {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.add-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.add-field-group label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.add-field-group input,
+.add-field-group select,
+.add-field-group textarea {
+    padding: 12px 14px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+    color: #0f172a;
+    background: #f8fafc;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.add-field-group input:focus,
+.add-field-group select:focus,
+.add-field-group textarea:focus {
+    border-color: #ff5200;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 82, 0, 0.1);
+}
+
+.add-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.add-checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: #334155;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-checkbox-field input[type="checkbox"] {
+    accent-color: #ff5200;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.add-submit-row {
+    margin-top: 10px;
+}
+
+.add-dish-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #ff5200, #ff6a00);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 82, 0, 0.3);
+    transition: all 0.2s;
+}
+
+.add-dish-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(255, 82, 0, 0.4);
+}
+
+.add-dish-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    .add-row-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .add-form-card {
+        padding: 20px;
+    }
 }

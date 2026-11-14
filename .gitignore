@@ -12,5 +12,9 @@ build/
 # Logs
 *.log
 
+# Uploads
+uploads/
+backend/uploads/
+
 # OS
 .DS_Store

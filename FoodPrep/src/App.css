@@ -1,0 +1,27 @@
+.foodprep-application {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fbfbfc;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.foodprep-main-root {
+    width: 100%;
+    flex: 1;
+}
+
+.app-content-container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .app-content-container {
+        padding: 0 16px;
+    }
+}

@@ -1,0 +1,152 @@
+.foodprep-home-view {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+}
+
+/* Why Choose FoodPrep Section */
+.foodprep-guarantee-section {
+    padding: 50px 0 30px 0;
+}
+
+.foodprep-guarantee-section .section-header-block {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.foodprep-guarantee-section .section-subtitle {
+    margin: 8px auto 0 auto;
+}
+
+.foodprep-guarantee-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.guarantee-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 24px 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.guarantee-card:hover {
+    transform: translateY(-4px);
+    border-color: #ffd8c2;
+    box-shadow: 0 10px 24px rgba(255, 82, 0, 0.1);
+}
+
+.guarantee-emoji {
+    font-size: 32px;
+    background: #fff4ec;
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.guarantee-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 5px;
+}
+
+.guarantee-card p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.45;
+}
+
+/* App Download Banner */
+.foodprep-app-download-banner {
+    margin: 50px 0 20px 0;
+    background: linear-gradient(135deg, #1c1c24, #2d2d3a);
+    border-radius: 28px;
+    padding: 50px 40px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+.app-download-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 2;
+}
+
+.app-banner-tag {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ff5200;
+    background: rgba(255, 82, 0, 0.15);
+    padding: 4px 14px;
+    border-radius: 999px;
+}
+
+.app-download-content h2 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.app-download-content p {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.app-store-badges {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.app-store-badges img {
+    height: 42px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.app-store-badges img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .foodprep-guarantee-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .foodprep-app-download-banner {
+        padding: 36px 20px;
+    }
+
+    .app-download-content h2 {
+        font-size: 24px;
+    }
+}

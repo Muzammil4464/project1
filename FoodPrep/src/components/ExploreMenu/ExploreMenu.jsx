@@ -1,26 +1,56 @@
-import { menu_list } from "../../assets/assets";
-import './ExploreMenu.css'
+import React, { useContext } from 'react';
+import { menu_list } from '../../assets/assets';
+import { StoreContext } from '../../context/StoreContext';
+import './ExploreMenu.css';
 
-import React from 'react'
+const ExploreMenu = () => {
+    const { category, setCategory } = useContext(StoreContext);
 
-const ExploreMenu = ({category,setCategory}) => {
-  return (
-    <div className="explore-menu" id="explore-menu">
-        <h1>Explore Our Menu</h1>
-        <p className="explore-menu-text">Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time</p>
-        <div className="explore-menu-list">
-            {menu_list.map((item,index)=>{
-                return(
-                    <div onClick={()=>setCategory(category=>category===item.menu_name?"All":item.menu_name)} key={index} className="explore-menu-list-item">
-                            <img className={category===item.menu_name?'active':''} src={item.menu_image} alt="" />
-                            <p>{item.menu_name}</p>
+    return (
+        <section className="foodprep-explore-menu" id="explore-menu">
+            <div className="section-header-block">
+                <span className="section-tag">Taste the Diversity</span>
+                <h2 className="section-title">Explore by Popular Category</h2>
+                <p className="section-subtitle">
+                    Select a category to filter your favorite cravings from fresh garden salads to chef-crafted pasta and desserts.
+                </p>
+            </div>
+
+            <div className="category-scroll-container">
+                {/* 'All' Option */}
+                <div
+                    className={`category-item-card ${category === 'All' ? 'active' : ''}`}
+                    onClick={() => setCategory('All')}
+                >
+                    <div className="category-image-circle all-category-circle">
+                        <span className="all-icon">🍽️</span>
                     </div>
-                )
-            })}
-        </div>
-        <hr />
-    </div>
-  )
-}
+                    <p className="category-name">All Items</p>
+                </div>
 
-export default ExploreMenu
+                {menu_list.map((item, index) => {
+                    const isSelected = category === item.menu_name;
+                    return (
+                        <div
+                            key={index}
+                            className={`category-item-card ${isSelected ? 'active' : ''}`}
+                            onClick={() => setCategory(isSelected ? 'All' : item.menu_name)}
+                        >
+                            <div className="category-image-circle">
+                                <img
+                                    src={item.menu_image}
+                                    alt={item.menu_name}
+                                    className="category-img"
+                                />
+                            </div>
+                            <p className="category-name">{item.menu_name}</p>
+                        </div>
+                    );
+                })}
+            </div>
+            <div className="category-divider-line"></div>
+        </section>
+    );
+};
+
+export default ExploreMenu;

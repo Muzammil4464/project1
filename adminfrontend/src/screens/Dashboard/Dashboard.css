@@ -1,0 +1,254 @@
+.admin-dashboard-screen {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+}
+
+.dashboard-welcome-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 24px 28px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.dashboard-welcome-banner h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.dashboard-welcome-banner p {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.metrics-refresh-btn {
+    padding: 10px 20px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.metrics-refresh-btn:hover:not(:disabled) {
+    background: #ff5200;
+    color: #ffffff;
+    border-color: #ff5200;
+}
+
+/* KPI Grid */
+.dashboard-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.kpi-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-3px);
+}
+
+.kpi-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+}
+
+.revenue-card .kpi-icon-wrap { background: #dcfce7; }
+.orders-card .kpi-icon-wrap { background: #e0f2fe; }
+.pending-card .kpi-icon-wrap { background: #fef3c7; }
+.dishes-card .kpi-icon-wrap { background: #ffedd5; }
+.delivered-card .kpi-icon-wrap { background: #d1fae5; }
+.cancelled-card .kpi-icon-wrap { background: #fee2e2; }
+
+.kpi-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.kpi-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+}
+
+.kpi-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.kpi-sub {
+    font-size: 11.5px;
+    color: #94a3b8;
+}
+
+/* Quick Actions */
+.dashboard-quick-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.quick-action-btn {
+    padding: 12px 22px;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.quick-action-btn:hover {
+    border-color: #ff5200;
+    color: #ff5200;
+}
+
+.quick-action-btn.primary-action {
+    background: #ff5200;
+    color: #ffffff;
+    border-color: #ff5200;
+    box-shadow: 0 4px 14px rgba(255, 82, 0, 0.25);
+}
+
+.quick-action-btn.primary-action:hover {
+    background: #e64a00;
+}
+
+/* Recent Orders Table */
+.dashboard-recent-orders-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.recent-orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recent-orders-header h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.view-all-orders-link {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #ff5200;
+    text-decoration: none;
+}
+
+.view-all-orders-link:hover {
+    text-decoration: underline;
+}
+
+.recent-orders-table-wrap {
+    overflow-x: auto;
+}
+
+.recent-orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+}
+
+.recent-orders-table th {
+    text-align: left;
+    padding: 12px 16px;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.recent-orders-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+}
+
+.order-id-cell {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.order-amount-cell {
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.payment-tag {
+    background: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.status-pill {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.status-pill.order-placed { background: #e0f2fe; color: #0369a1; }
+.status-pill.food-processing { background: #fef3c7; color: #b45309; }
+.status-pill.out-for-delivery { background: #ffedd5; color: #c2410c; }
+.status-pill.delivered { background: #dcfce7; color: #15803d; }
+.status-pill.cancelled { background: #fee2e2; color: #b91c1c; }
+
+.no-recent-orders {
+    padding: 30px;
+    text-align: center;
+    color: #94a3b8;
+}
