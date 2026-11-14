@@ -76,8 +76,10 @@ app.use((err, req, res, next) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`FoodPrep server started on port ${port} (http://localhost:${port})`);
-});
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`FoodPrep server started on port ${port}`);
+    });
+}
 
 module.exports = app;
